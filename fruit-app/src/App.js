@@ -29,7 +29,11 @@ class App extends Component {
           Learn React
         </a>
         <p>
-          {this.basket.listFruits()}
+          <ul>
+          {this.basket.listFruits().map(fruit => {return <li key={fruit}>{fruit}</li>})
+
+          }
+          </ul>
         </p>
       </header>
     </div>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Car from './modules/car';
+import modules from './modules';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,20 +10,7 @@ import {
   Link
 } from "react-router-dom";
 
-class Car {
-  constructor(name) { this.brand = name; }
-  present() { return 'I have a ' + this.brand; }
-}
 
-class SportCar extends Car {
-  constructor(name, mod) {
-    super(name);
-    this.model = mod;
-  }
-  show() {
-    return this.present() + ', it is a ' + this.model
-  }
-}
 
 //function App() {
 const carList = [
@@ -44,9 +33,9 @@ class App extends Component {
 
   myCars = [];
   render() {
-    this.myCars.push(new SportCar("Ford", "Mustang"));
-    this.myCars.push(new SportCar("BMW", "M8"));
-    this.myCars.push(new SportCar("Ferrari", "F50"));
+    this.myCars.push(new Car("Ford", "Mustang"));
+    this.myCars.push(new Car("BMW", "M8"));
+    this.myCars.push(new Car("Ferrari", "F50"));
     return (
       <Router>
         <Switch>
