@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import FruitBasket from './modules';
 
-function App() {
-  return (
+
+class App extends Component {
+  basket = new FruitBasket();
+  
+  render() {
+    this.basket.addFruit("Appelsiini");
+    this.basket.addFruit("Viinimarja");
+    this.basket.addFruit("Omena");
+    this.basket.addFruit("Päärynä");
+
+    return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -18,9 +28,13 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+          {this.basket.listFruits()}
+        </p>
       </header>
     </div>
   );
+  }
 }
 
 export default App;

@@ -1,8 +1,6 @@
-class FruitBasket {
-    constructor() {
-        super();
-    }
+export default class FruitBasket{
     fruits = [];
+ 
     addFruit(fruit) {
         this.fruits.push(fruit);
     }
