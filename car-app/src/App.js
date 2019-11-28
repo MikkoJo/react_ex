@@ -2,6 +2,21 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+class Car {
+  constructor(name) { this.brand = name; }
+  present() { return 'I have a ' + this.brand; }
+ } 
+
+ class SportCar extends Car {
+  constructor(name, mod) {
+  super(name);
+  this.model = mod;
+  }
+  show() {
+  return this.present() + ', it is a ' + this.model
+  }
+ } 
+
 function App() {
   const carList = [
     {
@@ -19,6 +34,9 @@ function App() {
     model: 'tt', 
     link: 'http://example.com/2'
   }];
+  
+  let mycar = new SportCar("Ford", "Mustang");
+
   return (
     <div className="App">
       <header className="App-header">
@@ -51,7 +69,8 @@ function App() {
             </a>
             </li>
           })}
-          </ol>  
+          </ol>
+          <p>{mycar.show()}</p>
           </div>
       </header>
     </div>
